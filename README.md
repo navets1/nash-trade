@@ -2,9 +2,15 @@
 
 Prezentacioni sajt firme Nash Trade (kelnerski vadičepovi, poklon kutije, vino).
 
-Ceo sajt je **jedan fajl**: `index.html`. Slike su ugrađene u sam fajl,
-pa nema dodatnih foldera ni podešavanja — fajl se otvori u bilo kom
-pregledaču i radi.
+Sajt je `index.html` plus folder `slike/`.
+
+Slike proizvoda su isečene iz kataloške fotografije dobavljača
+(`slike/izvornik-kataloska.jpg`) — bela pozadina je uklonjena i svaki
+pogled je snimljen kao zaseban WebP sa providnom pozadinom.
+
+Zamena slike: ubaci novi fajl u `slike/` i promeni putanju u `index.html`.
+Slike sa providnom pozadinom treba da budu isečene bez svetlog oboda,
+jer se sajt prikazuje na tamnoj podlozi.
 
 ## Gde je live
 
