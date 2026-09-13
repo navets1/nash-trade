@@ -82,6 +82,7 @@ nav.links a:hover{color:var(--brass)}
 .btn.ghost{background-color:transparent;color:var(--cream);border:1px solid #4A3541}
 .btn.ghost:hover{background-color:#241722;border-color:var(--brass);color:var(--brass)}
 .btn.small{padding:10px 16px;font-size:13.5px}
+.send-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
 
 /* ---------- hero ---------- */
@@ -119,7 +120,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .viewer{background-color:var(--night-3);border:1px solid var(--line);border-radius:4px;padding:18px}
 .viewer .main{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .viewer .main img{max-height:100%;object-fit:contain;filter:drop-shadow(0 14px 22px rgba(0,0,0,.6))}
-.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:14px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}
 .thumbs button{
   background-color:#170F16;border:1px solid var(--line);border-radius:3px;padding:8px;
   cursor:pointer;transition:border-color .18s,transform .18s;aspect-ratio:4/3;
@@ -205,24 +206,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .phone{font-family:'Bodoni Moda',serif;font-size:clamp(28px,4vw,42px);font-weight:500;color:#FBF7F2;display:block;letter-spacing:.01em}
 .phone-sub{color:var(--muted);font-size:15px;margin-top:8px}
 
-/* ---------- zadovoljni kupci ---------- */
-.clients{background-color:#0D070B;padding:64px 0 70px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
-.clients-head{text-align:center;margin-bottom:38px}
-.clients-head h3{font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(23px,3vw,32px);color:#FBF7F2;margin-top:12px}
-.marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.track{display:flex;width:max-content;animation:slide 42s linear infinite}
-.marquee:hover .track{animation-play-state:paused}
-@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.logo{
-  flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
-  width:clamp(190px,22vw,250px);padding:20px 14px;opacity:.62;transition:opacity .25s;
-  border-left:1px solid var(--line);text-align:center;
-}
-.logo:hover{opacity:1}
-.logo .mono{font-family:'Bodoni Moda',serif;font-size:26px;color:var(--brass);line-height:1}
-.logo .nm{font-family:'Bodoni Moda',serif;font-size:19px;font-weight:500;color:#EFE7E2;line-height:1.15;letter-spacing:.01em}
-.logo .sub{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-.logo .rule{width:26px;height:1px;background:var(--brass);opacity:.7}
 .info-rows{margin-top:32px;list-style:none}
 .info-rows li{padding:14px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:18px;font-size:15px;color:#D6C9D0}
 .info-rows li i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);flex:none}
@@ -249,13 +232,14 @@ footer{background-color:#0B0509;color:var(--muted);padding:42px 0;font-size:14px
   .hero{padding:44px 0 18px}
   .sec,.wine,.logostrip{padding:66px 0}
   .cards,.wine-perks{grid-template-columns:1fr 1fr}
-  .clients{padding:52px 0 56px}
   .calc{grid-template-columns:1fr 1fr}
   nav.links{display:none}
   .rung{margin-left:0;grid-template-columns:1fr auto;gap:14px}
   .rung .bar{display:none}
 }
 @media (max-width:600px){
+  .send-row{flex-direction:column}
+  .send-row .btn{width:100%}
   body{font-size:16px}
   .brand b{font-size:18px}
   .facts{grid-template-columns:1fr}
@@ -272,7 +256,6 @@ footer{background-color:#0B0509;color:var(--muted);padding:42px 0;font-size:14px
   .rv{opacity:1;transform:none;transition:none}
   .hero-img img{animation:none;transform:rotate(-4deg)}
   .badge i{animation:none}
-  .track{animation:none}
   *{transition:none!important}
 }
 </style>
@@ -339,7 +322,6 @@ footer{background-color:#0B0509;color:var(--muted);padding:42px 0;font-size:14px
         <div class="thumbs" id="thumbs">
           <button aria-current="true" data-src="slike/vadicep-otvoren.webp"><img src="slike/vadicep-otvoren.webp" alt="Vadičep otvoren, spirala izvučena" loading="lazy"></button>
           <button data-src="slike/vadicep-profil.webp"><img src="slike/vadicep-profil.webp" alt="Vadičep iz profila, sklopljen" loading="lazy"></button>
-          <button data-src="slike/vadicep-pod-uglom.webp"><img src="slike/vadicep-pod-uglom.webp" alt="Vadičep pod uglom, otvarač za flaše" loading="lazy"></button>
           <button data-src="slike/vadicep-sklopljen.webp"><img src="slike/vadicep-sklopljen.webp" alt="Vadičep sklopljen, sa boka" loading="lazy"></button>
         </div>
       </div>
@@ -511,16 +493,6 @@ footer{background-color:#0B0509;color:var(--muted);padding:42px 0;font-size:14px
   </div>
 </section>
 
-<!-- ZADOVOLJNI KUPCI -->
-<section class="clients">
-  <div class="wrap clients-head rv">
-    <div class="eyebrow">Zadovoljni kupci</div>
-    <h3>Vinarije, vinoteke i restorani koji već rade sa nama</h3>
-  </div>
-  <div class="marquee">
-    <div class="track" id="track" aria-hidden="true"></div>
-  </div>
-</section>
 
 <!-- KO KUPUJE -->
 <section class="sec panel">
@@ -581,8 +553,12 @@ footer{background-color:#0B0509;color:var(--muted);padding:42px 0;font-size:14px
           </div>
         </div>
         <div class="field"><label for="f-poruka">Poruka</label><textarea id="f-poruka" placeholder="Treba mi 100 komada za restoran, zanima me rok isporuke."></textarea></div>
-        <button class="btn" id="send" type="button">Pošalji upit na WhatsApp</button>
-        <p class="form-note" id="fnote">Dugme otvara WhatsApp sa već popunjenim upitom — ostaje samo da pošaljete poruku. Odgovaramo isti dan. Možete i pozvati: 060 6316025.</p>
+        <div class="send-row">
+          <button class="btn" id="send-wa" type="button">Pošalji na WhatsApp</button>
+          <button class="btn ghost" id="send-viber" type="button">Pošalji na Viber</button>
+          <button class="btn ghost" id="send-mail" type="button">Pošalji mejlom</button>
+        </div>
+        <p class="form-note" id="fnote">Popunite polja pa izaberite kako da pošaljete upit. Odgovaramo isti dan. Možete i pozvati: 060 6316025.</p>
       </div>
     </div>
   </div>
@@ -641,83 +617,84 @@ footer{background-color:#0B0509;color:var(--muted);padding:42px 0;font-size:14px
   if(qty){qty.addEventListener('input',calc);calc();}
 
   /* ====================================================================
-     SLANJE UPITA — WhatsApp
-     Dugme otvara WhatsApp (aplikaciju na telefonu, ili web.whatsapp.com
-     na kompjuteru) sa već popunjenom porukom iz forme.
-     Ako se broj ikada promeni, menja se samo ovde dole.
-     Format: pozivni broj države bez plusa i bez prve nule —
+     SLANJE UPITA
+     Kupac bira kanal: WhatsApp, Viber ili e-mail. Brojevi i adresa se
+     menjaju samo ovde dole, na jednom mestu.
+     Format broja: pozivni broj države bez plusa i bez prve nule —
      060 6316025  ->  381606316025
      ==================================================================== */
-  var WA_BROJ = "381606316025";
+  var WA_BROJ    = "381606316025";
+  var VIBER_BROJ = "+381606316025";
+  var MEJL       = "nashtrade@yahoo.com";
 
-  var send=document.getElementById('send');
-  if(send){
-    send.addEventListener('click',function(){
-      var ime=document.getElementById('f-ime').value.trim(),
-          firma=document.getElementById('f-firma').value.trim(),
-          kontakt=document.getElementById('f-kontakt').value.trim(),
-          kol=document.getElementById('f-kolicina').value,
-          por=document.getElementById('f-poruka').value.trim(),
-          note=document.getElementById('fnote');
+  var fnote=document.getElementById('fnote');
+  function say(msg,color){ if(fnote){ fnote.textContent=msg; fnote.style.color=color||''; } }
 
-      function say(msg,color){note.textContent=msg;note.style.color=color||'';}
+  /* Skuplja podatke iz forme. Vraca null i ispisuje gresku ako nesto fali. */
+  function upit(){
+    var ime=document.getElementById('f-ime').value.trim(),
+        firma=document.getElementById('f-firma').value.trim(),
+        kontakt=document.getElementById('f-kontakt').value.trim(),
+        kol=document.getElementById('f-kolicina').value,
+        por=document.getElementById('f-poruka').value.trim();
+    if(!ime||!kontakt){
+      say('Unesite ime i broj telefona ili e-mail da bismo mogli da odgovorimo.','#E8496A');
+      return null;
+    }
+    return {
+      kol:kol,
+      tekst:'Upit sa sajta\n\nIme: '+ime+'\n'+(firma?'Firma: '+firma+'\n':'')+
+            'Kontakt: '+kontakt+'\nInteresuje me: '+kol+'\n\n'+(por||'(bez dodatne poruke)')
+    };
+  }
 
-      if(!ime||!kontakt){
-        say('Unesite ime i broj telefona ili e-mail da bismo mogli da odgovorimo.','#E8496A');
-        return;
-      }
+  function kopiraj(tekst,onda){
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(tekst).then(function(){onda(true);},function(){onda(false);});
+    }else{
+      try{
+        var ta=document.createElement('textarea');
+        ta.value=tekst;ta.style.position='fixed';ta.style.opacity='0';
+        document.body.appendChild(ta);ta.select();document.execCommand('copy');
+        document.body.removeChild(ta);onda(true);
+      }catch(e){onda(false);}
+    }
+  }
 
-      var txt='Upit sa sajta\n\nIme: '+ime+'\n'+(firma?'Firma: '+firma+'\n':'')+
-              'Kontakt: '+kontakt+'\nInteresuje me: '+kol+'\n\n'+(por||'(bez dodatne poruke)');
+  function naKlik(id,radi){
+    var b=document.getElementById(id);
+    if(b) b.addEventListener('click',function(){ var u=upit(); if(u) radi(u); });
+  }
 
-      /* Ako WhatsApp ne moze da se otvori (blokiran prozor, stari telefon),
-         upit se kopira da kupac moze da ga nalepi sam. */
-      function copyFallback(){
-        function ok(){say('WhatsApp nije mogao da se otvori, ali je upit kopiran. Nalepite ga u poruku na 060 6316025 ili na nashtrade@yahoo.com.','#E4C77A');}
-        function bad(){say('Slanje nije uspelo. Javite se na 060 6316025 ili nashtrade@yahoo.com.','#E8496A');}
-        if(navigator.clipboard&&navigator.clipboard.writeText){
-          navigator.clipboard.writeText(txt).then(ok).catch(bad);
-        }else{
-          try{
-            var ta=document.createElement('textarea');
-            ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
-            document.body.appendChild(ta);ta.select();document.execCommand('copy');
-            document.body.removeChild(ta);ok();
-          }catch(e){bad();}
-        }
-      }
+  naKlik('send-wa',function(u){
+    var url='https://wa.me/'+WA_BROJ+'?text='+encodeURIComponent(u.tekst);
+    var w=null; try{ w=window.open(url,'_blank','noopener'); }catch(e){}
+    if(w){
+      say('Otvaramo WhatsApp sa vašim upitom — ostaje samo da pritisnete pošalji.','#9BD3A6');
+    }else{
+      kopiraj(u.tekst,function(ok){
+        say(ok?'WhatsApp nije mogao da se otvori, ali je upit kopiran. Nalepite ga u poruku na 060 6316025.'
+              :'Slanje nije uspelo. Javite se na 060 6316025 ili nashtrade@yahoo.com.', ok?'#E4C77A':'#E8496A');
+      });
+    }
+  });
 
-      var url='https://wa.me/'+WA_BROJ+'?text='+encodeURIComponent(txt);
-      var w;
-      try{ w=window.open(url,'_blank','noopener'); }catch(e){ w=null; }
-      if(w){
-        say('Otvaramo WhatsApp sa vašim upitom — ostaje samo da pritisnete pošalji.','#9BD3A6');
-      }else{
-        copyFallback();
-      }
+  naKlik('send-viber',function(u){
+    /* Viber ne prima gotov tekst kroz link, pa upit kopiramo da se nalepi. */
+    kopiraj(u.tekst,function(ok){
+      say(ok?'Upit je kopiran. Otvaramo Viber — nalepite poruku i pošaljite.'
+            :'Otvaramo Viber. Ako se ne otvori, pozovite 060 6316025.', ok?'#9BD3A6':'#E4C77A');
     });
-  }
+    window.location.href='viber://chat?number='+encodeURIComponent(VIBER_BROJ);
+  });
 
-  var clients=[
-    {m:'Z',n:'Zlatni Breg',s:'Vinarija'},
-    {m:'S',n:'Stara Loza',s:'Podrum'},
-    {m:'B',n:'Beli Kamen',s:'Vinarija'},
-    {m:'T',n:'Tri Hrasta',s:'Vinoteka'},
-    {m:'D',n:'Dolina Sunca',s:'Vinarija'},
-    {m:'Đ',n:'Podrum Đeram',s:'Vinski podrum'},
-    {m:'V',n:'Vinum Timok',s:'Vinarija'},
-    {m:'L',n:'Kuća Vina Lastar',s:'Vinoteka'},
-    {m:'A',n:'Konoba Amfora',s:'Restoran'},
-    {m:'M',n:'Mesečina',s:'Vinski bar'}
-  ];
-  var track=document.getElementById('track');
-  if(track){
-    var html=clients.map(function(c,i){
-      var top = i%3===0 ? '<span class="mono">'+c.m+'</span>' : '<span class="rule"></span>';
-      return '<div class="logo">'+top+'<span class="nm">'+c.n+'</span><span class="sub">'+c.s+'</span></div>';
-    }).join('');
-    track.innerHTML=html+html;
-  }
+  naKlik('send-mail',function(u){
+    window.location.href='mailto:'+MEJL+
+      '?subject='+encodeURIComponent('Upit sa sajta — '+u.kol)+
+      '&body='+encodeURIComponent(u.tekst);
+    say('Otvaramo vaš program za e-mail sa već popunjenim upitom.','#9BD3A6');
+  });
+
 
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var els=document.querySelectorAll('.rv');
